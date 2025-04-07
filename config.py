@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv, find_dotenv
 
+LOW_BUDGET = "100-50000"
+HIGH_BUDGET = "9000000-9999999999"
 
 HI_ARRAY = {'hi', 'hello', 'good', 'привет', 'здоров', 'здравствуй', 'здравствуйте', 'menu', 'start', 'меню', 'старт'}
 
@@ -36,6 +38,12 @@ else:
 API_KEY = os.getenv("API_KEY")
 # Токен бота можно получить через @BotFather в Telegram
 TOKEN = os.getenv("TOKEN")
+
+
+# Настройки REDIS
+REDIS_HOST = os.getenv("REDIS_HOST", "redis")  # Используем имя сервиса из docker-compose
+REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
+REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
 
 # ['announced', 'completed', 'filming', 'post-production', 'pre-production']
 # ['animated-series', 'anime', 'cartoon', 'movie', 'tv-series']
